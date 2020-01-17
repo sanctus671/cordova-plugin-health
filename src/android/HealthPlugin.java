@@ -541,7 +541,7 @@ public class HealthPlugin extends CordovaPlugin {
 
         dynPerms.clear();
         if (locationscope == READ_PERMS || locationscope == READ_WRITE_PERMS || activityscope == READ_PERMS || activityscope == READ_WRITE_PERMS) //activity requires access to location to report distace
-            dynPerms.add(Manifest.permission.ACCESS_FINE_LOCATION);
+            //dynPerms.add(Manifest.permission.ACCESS_FINE_LOCATION);
         if (bodyscope == READ_PERMS || bodyscope == READ_WRITE_PERMS)
             dynPerms.add(Manifest.permission.BODY_SENSORS);
 
@@ -561,9 +561,9 @@ public class HealthPlugin extends CordovaPlugin {
             builder.addScope(new Scope(Scopes.FITNESS_ACTIVITY_READ_WRITE));
         }
         if (locationscope == READ_WRITE_PERMS) { //specifially request read write permission for location.
-            builder.addScope(new Scope(Scopes.FITNESS_LOCATION_READ_WRITE));
+            //builder.addScope(new Scope(Scopes.FITNESS_LOCATION_READ_WRITE));
         } else if (locationscope == READ_PERMS || activityscope == READ_PERMS || activityscope == READ_WRITE_PERMS) { // if read permission request for location or any read/write permissions for activities were requested then give read location
-            builder.addScope(new Scope(Scopes.FITNESS_LOCATION_READ));
+            //builder.addScope(new Scope(Scopes.FITNESS_LOCATION_READ));
         }
         if (nutritionscope == READ_PERMS) {
             builder.addScope(new Scope(Scopes.FITNESS_NUTRITION_READ));
